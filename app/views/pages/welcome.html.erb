@@ -1,0 +1,43 @@
+<h1>Welcome to the to do list app</h1>
+<div ng-app = "app">
+	<h2>To Do List</h2>
+	<div ng-controller = "stuffCtrl">
+
+		<div class ="container" id = "toDo">
+		<ul class ="list-unstyled">
+
+		<li ng-repeat="toDo in toDos" ng-if="positive(toDo.text)" ng-class="{ strikethru: toDo.complete }">
+			<input type="checkbox" ng-model="toDo.complete"><strong> {{ toDo.text }}</strong>
+			</li>
+		</ul>
+		<form class ="form-horizontal">
+			<div class="form-group">
+		 	<input type="text" ng-model="newToDoText" ng-model-instant>
+			<button class="btn" ng-click="addToDo(newToDoText)"> <span class="glyphicon glyphicon-pencil"></span> Add</button>
+		</div>
+		</form>
+		<h2> total: {{getTotalToDos()}}</h2>
+		<button class= "btn btn-success" ng-click="clearCompleted()"><i class="glyphicon glyphicon-trash"></i> Clear Completed</button>
+		</div>
+	</div>
+</div>
+
+<!-- ng-class -->
+		<!-- <p>1. {{ task1 }}	<input ng-model="task1"></p>
+		
+		<p>2. {{ task2 }}	<input ng-model="task2"></p>
+		
+		<p>3. {{ task3 }}	<input ng-model="task3"></p> -->
+	
+	
+
+<!-- <div id = "reviews">
+	<ul>
+		<li ng-repeat="review in reviews">{{ review }}</li>
+	</ul>
+	<input ng-model="newReview">
+	<button ng-click="addReview(newReview)"> Add Review</button>
+</div>
+ -->
+<!-- </div>
+</div> -->
